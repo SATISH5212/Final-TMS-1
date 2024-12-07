@@ -218,7 +218,7 @@
 
 // Satish code
 
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
@@ -280,7 +280,8 @@ function RouteComponent() {
     );
     if (!res.ok) {
       throw new Error("Failed to fetch the tickets data");
-    }
+      
+    } 
     const data = await res.json();
     setTpages(data.pagination_details.total_pages);
     return data;
