@@ -41,6 +41,10 @@ function Profile() {
       } catch (error) {
         setMessage("Network error. Please try again later.");
       }
+      finally{
+        setDeleteMessage(    ""   
+        )
+      }
     };
 
     fetchProfile();

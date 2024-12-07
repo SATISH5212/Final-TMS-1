@@ -11,7 +11,7 @@ export const Route = createFileRoute("/addAttachment")({
 
 function AddAttachment() {
   const [ticketId, setTicketId] = useState("");
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
   const [responseMessage, setResponseMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -88,7 +88,7 @@ function AddAttachment() {
           <Input
             type="file"
             id="file"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => setFile(e.target.files?e.target.files[0]:null)}
             required
             style={{ cursor: "pointer" }}
           />

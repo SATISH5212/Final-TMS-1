@@ -18,7 +18,7 @@ function AddAgent() {
   const [responseMessage, setResponseMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("null");
   const token = localStorage.getItem("accessToken");
   const navigate = useNavigate();
 
@@ -94,6 +94,7 @@ function AddAgent() {
 
   return (
     <div>
+     {message && <p style={{ color: "red" }}>{message}</p>}
       <h1>Add Agent</h1>
       <form onSubmit={handleSubmit}>
         <div>
